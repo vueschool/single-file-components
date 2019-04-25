@@ -13,9 +13,16 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+  $size: 50pt;
+  $yellow: #DCAE1D;
+
   .username {
-    font-size: 50pt;
-    color: #DCAE1D;
+    font-size: $size;
+    color: $yellow;
+
+    .icon {
+      color: green;
+    }
   }
 </style>
