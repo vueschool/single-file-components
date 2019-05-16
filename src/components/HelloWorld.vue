@@ -1,20 +1,26 @@
 <template>
   <div class="hello">
     <h1 class="username">{{ msg }}</h1>
-    <BigYellowUsername username="hootlex"/>
+    <button @click="showUsername = !showUsername">Toggle Username</button>
+    <div v-if="showUsername">
+      <BigYellowUsername username="hootlex"/>
+    </div>
   </div>
 </template>
 
 <script>
-import BigYellowUsername from './BigYellowUsername.vue'
-
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
   },
+  data () {
+    return {
+      showUsername: false
+    }
+  },
   components: {
-    BigYellowUsername
+    BigYellowUsername: () => import(/* webpackChunkName: "BigYellowUsername" */'./BigYellowUsername.vue')
   }
 }
 </script>
